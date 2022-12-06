@@ -1,6 +1,5 @@
 # Futbot
 
-
 Welcome to futbot, the chatbot give you relevant updates to the ongoing World Cup of Soccer.
 
 The project is totally open to contributions, message me on discord if you'd like to be added to the project (you can add yourself to the section below too!). The outline I've written is intended to be just a start. Please feel free to make any part your own and/or suggest any improvements.
