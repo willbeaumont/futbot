@@ -2,6 +2,37 @@
 
 Welcome to futbot, the chatbot give you relevant updates to the ongoing World Cup of Soccer.
 
+The project is totally open to contributions, message me on discord if you'd like to be added to the project. The outline I've written is intended to be just a start. Please feel free to make any part your own and/or suggest any improvements. 
+
+## Project Goals
+1. Learn more on how to collaborate using git
+2. Implement Dialogflow api to answer questions about the world cup
+3. Practice writing React components
+4. Practice writing css
+5. ...others?
+
+## Project Structure
+
+### `App.js`
+This file will contain the code to interact with the Dialogflow API. React component will be imported from the `Components.js` file to render the API input and output.
+
+*I'm not sure how I'll protect my api key for Diagflow.*
+
+### `Components.js`
+I'm guessing that at least 3 components will be needed to create the app:
+1. Button - for users to submit their questions
+2. DialogBox - a component to render questions and answers
+  1. If there's time, it'd be cool to setup a feedback to let users flag weird responses
+3. UserInput - an area for users to input their questions
+4. ...others??
+
+### `App.css`
+Needs to be updated to style the web app. There aren't any id or classNames in the `App.js` or `Components.js` files.
+
+
+
+
+
 ---
 ## React Boilerplate
 
