@@ -1,8 +1,9 @@
 # Futbot
 
+
 Welcome to futbot, the chatbot give you relevant updates to the ongoing World Cup of Soccer.
 
-The project is totally open to contributions, message me on discord if you'd like to be added to the project. The outline I've written is intended to be just a start. Please feel free to make any part your own and/or suggest any improvements. 
+The project is totally open to contributions, message me on discord if you'd like to be added to the project (you can add yourself to the section below too!). The outline I've written is intended to be just a start. Please feel free to make any part your own and/or suggest any improvements.
 
 ## Project Goals
 1. Learn more on how to collaborate using git
@@ -29,8 +30,9 @@ I'm guessing that at least 3 components will be needed to create the app:
 ### `App.css`
 Needs to be updated to style the web app. There aren't any id or classNames in the `App.js` or `Components.js` files.
 
-
-
+## Contributors
+* [Will Beaumont](https://github.com/willbeaumont)
+* Just do it!
 
 
 ---
