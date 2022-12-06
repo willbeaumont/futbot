@@ -22,7 +22,7 @@ This file will contain the code to interact with the Dialogflow API. React compo
 I'm guessing that at least 3 components will be needed to create the app:
 1. Button - for users to submit their questions
 2. DialogBox - a component to render questions and answers
-  1. If there's time, it'd be cool to setup a feedback to let users flag weird responses
+    1. If there's time, it'd be cool to setup a feedback to let users flag weird responses
 3. UserInput - an area for users to input their questions
 4. ...others??
 
