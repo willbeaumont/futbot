@@ -1,5 +1,6 @@
 # Futbot
 
+Welcome to futbot, the chatbot give you relevant updates to the ongoing World Cup of Soccer.
 
 ---
 ## React Boilerplate
