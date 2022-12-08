@@ -2,6 +2,17 @@
 
 On my first pass, I'm going to ask ChatGPT how to setup Diagflow and see if it works! I'll dive deeper into the docs if there are problems.
 
+## Basics/Vocab
+**Agent:** Aka chatbot that handles conversations with end-users
+**Flows:** Conversation flow(s) follow topics and a defined conversational path. Simple agent might only need one flow, where complicated could need many.
+**Pages:** Handles the state of the CX session. Think of it as a topic where the agent is trying to get information from the user.
+**Entity types:** Data extracted from the end-user's conversation.
+**Parameters:** Name and entity type, used to perform logic or generate responses.
+**Forms:** List of parameters that should be collected from the end-user on a given page. The agent interacts with the end-user until the form is complete.
+**Intents:** The end-users intention for one conversation turn. Intent contain training phrases and parameters.
+**Fulfillment:** The agent's conversational turn must be: (1) response with an answer, (2) query for information, or (3) session termination.
+**State handlers (handlers):** Controls the conversation by creating responses and/or transitioning the current page. There are three types of handler data: (1) Handler requirements that need to be satisfied to affect a session, (2) Handler fulfillment creates a response, or (3) Handler transition target to change the current page. There are two types of handlers: (1) Routes are when end-user input matches an intent/condition, or (2) Event handlers when something predefined or unexpected happens.
+
 ## Steps
 
 *Prompt: what are the steps to use Diagflow?*
