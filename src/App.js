@@ -1,59 +1,42 @@
+import { useState } from "react";
 import "./App.css";
-import { Button, DialogBox, UserInput } from "./Components.js";
+import { Button, DialogBox, UserInput } from "./ComponentsTest.js";
 
-/* Here is a sample of what is returned by the Dialogflow API
-{
-  "id": "bc9c9f2f-b707-4bdd-aa1e-b5f053a8f8b3",
-  "timestamp": "2022-12-06T09:45:19.128Z",
-  "lang": "en",
-  "result": {
-    "source": "agent",
-    "resolvedQuery": "What is the weather like?",
-    "action": "",
-    "actionIncomplete": false,
-    "parameters": {},
-    "contexts": [],
-    "metadata": {
-      "intentId": "b5691684-a3e0-4d3e-befc-5f5b5d5b5d5d",
-      "webhookUsed": "false",
-      "webhookForSlotFillingUsed": "false",
-      "intentName": "Get Weather"
-    },
-    "fulfillment": {
-      "speech": "The weather is currently sunny and warm.",
-      "messages": [
-        {
-          "type": 0,
-          "speech": "The weather is currently sunny and warm."
-        }
-      ]
-    },
-    "score": 1
-  },
-  "status": {
-    "code": 200,
-    "errorType": "success"
-  },
-  "sessionId": "a1b2c3d4-e5f6-g7h8-i9j0"
-}
-*/
-
-//TODO: send request to api
-function getfDialogflow() {
-  alert("You need to update this!")
-}
-
-// stripped create-react-app to bare bones
 function App() {
+  const [convo, setConvo] = useState([]);
+  const [context, setContext] = useState([]);
+  
+  function getfDialogflow(e) {
+    e.preventDefault();
+    
+    const question = e.target.question.value;
+    e.target.question.value = "";
+    setConvo([...convo, question, "..."])
+
+    fetch(`/api?question=${question}&context=${JSON.stringify(context)}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setConvo([...convo, question, data.response])
+        data.context && setContext(data.context)
+      });
+  }
+
   return (
-    <div>
+    <div className="App">
       <header>
         <h1>Futbot</h1>
-        <p>A soccer (or football) bot for the World Cup.</p>
+        <h2>...or just someone to congratulate you on knowing a language</h2>
+        <p>Try saying hi!</p>
+        <p>Tell me what a language you can speak?</p>
       </header>
-      <DialogBox />
-      <UserInput />
-      <Button name="Send" action={getfDialogflow} />
+      <div className="body">
+        <div className="interface">
+          <DialogBox convo={convo} />
+          <UserInput action={getfDialogflow}>
+            <Button name="Send" />
+          </UserInput>
+        </div>
+      </div>
     </div>
   );
 }
