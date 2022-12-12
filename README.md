@@ -5,11 +5,11 @@ Welcome to **Futbot**, the chatbot that gives you relevant updates to the ongoin
 This project is totally open to contributions; Message me on Discord if you'd like to be added to the project (you can add yourself to the section below too!). The outline I've written is intended to be just a start. Please feel free to make any part your own and/or suggest any improvements.
 
 ## Project Goals
-1. Implement Dialogflow api to answer questions about the world cup
+1. Implement Dialogflow api to answer questions 
+2. Answer questions about the world cup
 2. Learn more on how to collaborate using git
 3. Practice writing React components
 4. Practice writing css
-5. ...others?
 
 ## Project Structure
 
