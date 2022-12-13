@@ -1,25 +1,30 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import "./App.css";
 import { Button, DialogBox, UserInput } from "./ComponentsTest.js";
 
 function App() {
   const [convo, setConvo] = useState([]);
   const [context, setContext] = useState([]);
+  const [loading, setLoading] = useState(false);
   
-  function getfDialogflow(e) {
+  const getfDialogflow = useCallback((e) => {
     e.preventDefault();
     
     const question = e.target.question.value;
     e.target.question.value = "";
-    setConvo([...convo, question, "..."])
-
+    setConvo(oldState => [...oldState, question, "..."])
+    setLoading(true);
     fetch(`/api?question=${question}&context=${JSON.stringify(context)}`)
       .then((res) => res.json())
       .then((data) => {
-        setConvo([...convo, question, data.response])
+        setConvo((oldState) => {
+          const newArray = oldState.filter(el => el !== "...")
+          return [...newArray, data.response]
+        })
         data.context && setContext(data.context)
+        setLoading(false)
       });
-  }
+  }, []);
 
   return (
     <div className="App">
